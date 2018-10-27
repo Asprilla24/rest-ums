@@ -1,0 +1,9 @@
+CREATE TABLE AppUserRoles (
+    ID INT PRIMARY KEY AUTO_INCREMENT,
+    RoleId VARCHAR(100) NOT NULL,
+    UserId VARCHAR(100) NOT NULL,
+    LastUpdated DATETIME NOT NULL
+)
+
+CREATE INDEX IDX_AppUserRoles
+ON AppUserRoles (ID, LastUpdated)

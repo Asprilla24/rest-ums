@@ -11,6 +11,7 @@ const DB_SERVER = "tcp(127.0.0.1)"
 const DB_PORT = ""
 const DB_USER = "root"
 const DB_PASSWORD = "password"
+const IS_PARSING_TIME = true
 
 func connect() *sql.DB {
 	connString := getConnectionString()
@@ -38,6 +39,10 @@ func getConnectionString() string {
 	}
 
 	connString += "/" + DB_NAME
+
+	if IS_PARSING_TIME {
+		connString += "?parseTime=true"
+	}
 
 	return connString
 }
